@@ -337,7 +337,7 @@ def make_giabreport(args, stats_box):
         get a count for all the keys
         key is a dictionary of count and their order
         """
-        main_key = key.keys()[0]
+        main_key = list(key.keys())[0]
         cnt = Counter()
         for x in docs:
             cnt[x[main_key]] += 1
@@ -348,8 +348,8 @@ def make_giabreport(args, stats_box):
         """
         Parse any set of docs and create a 2x2 table
         """
-        main_key1 = key1.keys()[0]
-        main_key2 = key2.keys()[0]
+        main_key1 = list(key1.keys())[0]
+        main_key2 = list(key2.keys())[0]
         cnt = defaultdict(Counter)
         for x in docs:
             cnt[x[main_key1]][x[main_key2]] += 1
